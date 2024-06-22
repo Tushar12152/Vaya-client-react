@@ -1,8 +1,10 @@
-import { BsTwitter, BsYoutube } from "react-icons/bs"
+import { BsHeadset, BsTwitter, BsYoutube } from "react-icons/bs"
 import { FaFacebookF } from "react-icons/fa"
 import { ImInstagram } from "react-icons/im"
 import { LiaLinkedin } from "react-icons/lia"
 import { Link } from "react-router-dom"
+import logo from '../assets/NavLogo.webp'
+import { BiSearch, BiShoppingBag, BiUser } from "react-icons/bi"
 
   
 
@@ -32,6 +34,42 @@ const Nav = () => {
                 </div>
          </div>
     </div>
+
+    {/* navBody */}
+
+      <div className="w-[80%] mx-auto py-5 flex  items-center justify-between">
+           <div className="flex gap-6">
+               <img className="text-md w-36 pr-5 border-r-2" src={logo} alt="" />
+                <div className="flex gap-6 items-center">
+                   <span className="text-5xl font-bold"><BsHeadset/> </span>
+                    <div>
+                         <h1 className="font-bold text-lg text-gray-700 border-b-2">Email us: support@storesupport.com</h1>
+                         <h1 className="font-bold text-lg text-gray-700">Call us: +0123 456 789</h1>
+                    </div>
+                </div>
+           </div>
+
+
+           <div className="flex gap-6 items-center justify-center">
+                <div className="flex items-center justify-center ">
+                     <input className="p-2 border w-[300px] border-black " placeholder="search...." type="search" name="" id="" />
+                     <button className="bg-slate-700 text-white p-[13px] "><BiSearch/></button>
+                </div>
+                <div className="flex justify-center items-center gap-6">
+                    <span className="px-4 btn hover:bg-slate-700 bg-gray-400">
+                         <BiUser/>
+                    </span>
+
+                    <span className="px-4 btn hover:bg-slate-700 bg-gray-400">
+                      <span>$00</span>    <BiShoppingBag/>
+                    </span>
+
+                </div>
+
+           </div>
+      </div>
+
+
    </div>
   )
 }
