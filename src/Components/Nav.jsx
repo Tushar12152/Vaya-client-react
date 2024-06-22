@@ -2,17 +2,29 @@ import { BsHeadset, BsTwitter, BsYoutube } from "react-icons/bs"
 import { FaFacebookF } from "react-icons/fa"
 import { ImInstagram } from "react-icons/im"
 import { LiaLinkedin } from "react-icons/lia"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import logo from '../assets/NavLogo.webp'
 import { BiSearch, BiShoppingBag, BiUser } from "react-icons/bi"
 
   
 
 const Nav = () => {
+
+     const navLink= <div className="flex items-center justify-start gap-4">
+           <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-slate-700 text-white p-3 rounded-lg" : " "}> Home </NavLink>
+           <NavLink to="about" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-slate-700 text-white  p-3 rounded-lg" : ""}> About US </NavLink>
+           <NavLink to="/shop" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-slate-700 text-white  p-3 rounded-lg" : ""}> Shop  </NavLink>
+           <NavLink to="/blog" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-slate-700 text-white  p-3 rounded-lg" : ""}> Blog </NavLink>
+           <NavLink to="/contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-slate-700 text-white  p-3 rounded-lg" : ""}> Contact </NavLink>
+           
+
+     </div>
+
+
   return (
    <div>
       {/* navHeader */}
-     <div className="w-full bg-slate-900 p-2">
+     <div className="w-full bg-slate-600 p-2">
          <div className="w-[80%] mx-auto flex justify-between items-center">
                 <div>
                     <h3 className="text-gray-400">Get Up to 30% OFF Store wide – Limited time only</h3>
@@ -69,6 +81,14 @@ const Nav = () => {
            </div>
       </div>
 
+   
+      {/* navbarEnd */}
+     
+      <div className="bg-slate-600">
+          <div className="text-white pl-0 p-5 w-[80%] mx-auto">
+         { navLink}
+          </div>
+      </div>
 
    </div>
   )
