@@ -80,7 +80,7 @@ const Banner = () => {
                                  <img src={card?.image} alt="" />
                                  <h1 className="text-lg w-full p-2 bg-gray-600 text-white text-center">{card?.description}</h1>
 
-                                 <span className='py-7 px-2  absolute  top-40 right-1 rounded-full text-white  bg-[#FF8A65]'>
+                                 <span className='py-7 px-2  absolute  top-60 right-1 rounded-full text-white  bg-[#FF8A65]'>
                                     {card?.discount}
                                  </span>
                              </div>

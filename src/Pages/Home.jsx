@@ -13,10 +13,10 @@ const Home = () => {
 
         <div className="flex gap-6 w-[80%] mx-auto mt-10">
     
-             <div className="w-[35%]">
+             <div className="w-[20%]">
                  <HomeLeft/>
              </div>
-             <div className="w-[65%]">
+             <div className="w-[80%]">
                   <HomeRight/>
              </div>
 
