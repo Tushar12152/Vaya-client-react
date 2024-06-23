@@ -3,9 +3,34 @@ import slide2 from '../assets/slide-02.webp'
 
 
 
+
 const Banner = () => {
+
+
+    const bannerInfo=[
+        {
+            id:1,
+            image:'https://i.ibb.co/PY2FyTQ/banner-01.webp',
+            description:'On selected Womens footwear',
+            discount:'20% OFF'
+        },
+        {
+            id:2,
+            image:"https://i.ibb.co/x32Z4t0/banner-02.webp",
+            description:'On selected mens fashion',
+            discount:'25% OFF'
+        },
+        {
+            id:3,
+            image:"https://i.ibb.co/6NRrnrg/banner-03.webp",
+            description:'On selected kids fashion',
+            discount:'30% OFF'
+        },
+    ]
+
     return (
         <div>
+            {/* carosel */}
             <div className="carousel w-full">
 
                 <div id="slide1" className="carousel-item relative w-full">
@@ -47,6 +72,23 @@ const Banner = () => {
                 </div>
 
             </div>
+
+             <div className='mt-10 flex gap-6'>
+                    {
+                        bannerInfo.map(card=><div key={card?.id}>
+                             <div className='relative'>
+                                 <img src={card?.image} alt="" />
+                                 <h1 className="text-lg w-full p-2 bg-gray-600 text-white text-center">{card?.description}</h1>
+
+                                 <span className='py-7 px-2  absolute  top-40 right-1 rounded-full text-white  bg-[#FF8A65]'>
+                                    {card?.discount}
+                                 </span>
+                             </div>
+                        </div>)
+                    }
+             </div>
+
+
         </div>
     )
 }
