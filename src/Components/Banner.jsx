@@ -1,5 +1,8 @@
 import slide1 from '../assets/slide-01.webp'
 import slide2 from '../assets/slide-02.webp'
+import banner1 from '../assets/banner-01.webp'
+import banner2 from '../assets/banner-02.webp'
+import banner3 from '../assets/banner-03.webp'
 
 
 
@@ -10,19 +13,19 @@ const Banner = () => {
     const bannerInfo=[
         {
             id:1,
-            image:'https://i.ibb.co/PY2FyTQ/banner-01.webp',
+            image:banner1,
             description:'On selected Womens footwear',
             discount:'20% OFF'
         },
         {
             id:2,
-            image:"https://i.ibb.co/x32Z4t0/banner-02.webp",
+            image:banner2,
             description:'On selected mens fashion',
             discount:'25% OFF'
         },
         {
             id:3,
-            image:"https://i.ibb.co/6NRrnrg/banner-03.webp",
+            image:banner3,
             description:'On selected kids fashion',
             discount:'30% OFF'
         },

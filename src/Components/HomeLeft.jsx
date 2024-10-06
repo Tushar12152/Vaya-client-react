@@ -15,6 +15,22 @@ const HomeLeft = () => {
                   <h1 className="font-bold p-3 bg-gray-200 hover:bg-[#7ec4cf] hover:text-white w-full cursor-pointer" href='#'> Beauty and skincare </h1>
                </ul>
         </div>
+
+
+        <div className="mt-10">
+            <h1 className="font-bold text-lg p-3 bg-gray-600 text-white mb-1">Kids collections</h1>
+               <ul className="w-full">
+                  <h1 className="font-bold p-3 bg-gray-200 hover:bg-[#7ec4cf] hover:text-white w-full cursor-pointer" href='#'> Shoes </h1>
+                  <h1 className="font-bold p-3 bg-gray-200 hover:bg-[#7ec4cf] hover:text-white w-full cursor-pointer" href='#'> Shirt </h1>
+                  <h1 className="font-bold p-3 bg-gray-200 hover:bg-[#7ec4cf] hover:text-white w-full cursor-pointer" href='#'> Cosmetics </h1>
+                  <h1 className="font-bold p-3 bg-gray-200 hover:bg-[#7ec4cf] hover:text-white w-full cursor-pointer" href='#'> Medicine </h1>
+                  <h1 className="font-bold p-3 bg-gray-200 hover:bg-[#7ec4cf] hover:text-white w-full cursor-pointer" href='#'> Sport and Fitness </h1>
+                  <h1 className="font-bold p-3 bg-gray-200 hover:bg-[#7ec4cf] hover:text-white w-full cursor-pointer" href='#'> Beauty and skincare </h1>
+               </ul>
+        </div>
+
+
+
     </div>
   )
 }
