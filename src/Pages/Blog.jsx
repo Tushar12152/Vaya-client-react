@@ -89,7 +89,7 @@ const Blog = () => {
 
           {/* Subscribe Form */}
           <div className="bg-white p-4 rounded-lg shadow">
-            <h3 className="text-lg font-semibold mb-4">Don't miss the deals</h3>
+            <h3 className="text-lg font-semibold mb-4">Dont miss the deals</h3>
             <p className="text-sm text-gray-600 mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
