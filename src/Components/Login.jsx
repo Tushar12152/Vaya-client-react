@@ -1,5 +1,6 @@
 import { BsGoogle } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -83,9 +84,9 @@ const handleSubmit=(e)=>{
         <div className="mt-8 text-center">
           <p className="text-gray-600">
             Don’t have an account?{' '}
-            <a href="#" className="text-blue-600 hover:text-blue-700 font-semibold">
+            <Link to='/signup' className="text-blue-600 hover:text-blue-700 font-semibold">
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </div>

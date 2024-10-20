@@ -1,0 +1,22 @@
+/* AnimatedBackground.css */
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @keyframes hoverBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .animate-floating {
+    animation: floating 5s ease-in-out infinite;
+  }
+  
+  .hover:animate-hoverBackground {
+    animation: hoverBackground 3s ease-in-out infinite;
+    background-size: 200%;
+  }
+  
