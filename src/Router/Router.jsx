@@ -5,6 +5,7 @@ import About from "../Pages/About"
 import Shop from "../Pages/Shop"
 import Blog from "../Pages/Blog"
 import Contact from "../Pages/Contact"
+import Login from "../Components/Login"
 
 const Router = createBrowserRouter([
     {
@@ -30,7 +31,12 @@ const Router = createBrowserRouter([
             {
                 path:'contact',
                 element:<Contact/>
-            }
+            },
+
+            {
+                path:'/login',
+                element:<Login/>
+            },
         ]
     }
 ])

@@ -68,9 +68,9 @@ const Nav = () => {
                      <button className="bg-slate-700 text-white p-[13px] "><BiSearch/></button>
                 </div>
                 <div className="flex justify-center items-center gap-6">
-                    <span className="px-4 btn hover:bg-slate-700 bg-gray-400">
+                    <Link to='/login' className="px-4 btn hover:bg-slate-700 bg-gray-400">
                          <BiUser/>
-                    </span>
+                    </Link>
 
                     <span className="px-4 btn hover:bg-slate-700 bg-gray-400">
                       <span>$00</span>    <BiShoppingBag/>
