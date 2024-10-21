@@ -1,9 +1,13 @@
 import  { useState } from 'react';
 import { imageUpload } from "../API'S/ImageUpload";
+import useAuth from '../../Hooks/useAuth';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [imagePreview, setImagePreview] = useState(null);
-
+    const navigate= useNavigate()
+    const {createUser}=useAuth()
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -21,6 +25,14 @@ const Signup = () => {
     const photo=img?.data?.display_url;
     
     console.log('Signup Info:', { name, email, password, photo });
+
+    const result= await createUser(email,password)
+     if(result.user){
+        toast.success("Registration complete...")
+        navigate('/login')
+     }
+
+
   };
 
   return (
