@@ -1,17 +1,23 @@
 import { BsGoogle } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
 
+  const {login}=useAuth()
 
-const handleSubmit=(e)=>{
+const handleSubmit=async (e)=>{
     e.preventDefault()
 
      const email=e.target.email.value
      const password= e.target.password.value
 
-     console.log(email,password)
+    const result= await login(email,password)
+     if(result?.user?.email){
+       toast.success('logged in')
+     }
 }
 
 

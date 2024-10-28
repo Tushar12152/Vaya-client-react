@@ -1,13 +1,13 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { imageUpload } from "../API'S/ImageUpload";
 import useAuth from '../../Hooks/useAuth';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [imagePreview, setImagePreview] = useState(null);
-    const navigate= useNavigate()
-    const {createUser}=useAuth()
+  const navigate = useNavigate()
+  const { createUser, loading } = useAuth()
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -21,16 +21,17 @@ const Signup = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const image = e.target.image.files[0];
-    const img=await imageUpload(image)
-    const photo=img?.data?.display_url;
-    
+    const img = await imageUpload(image)
+    const photo = img?.data?.display_url;
+
     console.log('Signup Info:', { name, email, password, photo });
 
-    const result= await createUser(email,password)
-     if(result.user){
-        toast.success("Registration complete...")
-        navigate('/login')
-     }
+    const result = await createUser(email, password)
+    if (result.user) {
+      toast.success("Registration complete...")
+      navigate('/login')
+    }
+    
 
 
   };
@@ -93,11 +94,12 @@ const Signup = () => {
             type="submit"
             className="w-full py-3 bg-slate-500 text-white font-semibold rounded-lg hover:bg-slate-600 focus:outline-none"
           >
+            {/* {loading ? "Sign Up" : "...."} */}
             Sign Up
           </button>
         </form>
         <p className="text-sm text-center text-gray-500">
-          Already have an account? <a href="#" className="text-blue-500 hover:underline">Log In</a>
+          Already have an account? <Link to='/login' className="text-blue-500 hover:underline">Log In</Link>
         </p>
       </div>
     </div>
