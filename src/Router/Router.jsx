@@ -7,6 +7,7 @@ import Blog from "../Pages/Blog"
 import Contact from "../Pages/Contact"
 import Login from "../Components/Login"
 import Signup from "../Components/Signup"
+import DashBoard from "../Dashboard/Dashboard"
 
 const Router = createBrowserRouter([
     {
@@ -42,8 +43,14 @@ const Router = createBrowserRouter([
                 path:'/signup',
                 element:<Signup/>
             },
+            
         ]
-    }
+
+    },
+    {
+        path:'/dashboard',
+        element:<DashBoard/>
+    },
 ])
 
 export default Router

@@ -1,12 +1,13 @@
 import { BsGoogle } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 
 const Login = () => {
 
   const {login}=useAuth()
+  const navigate=useNavigate()
 
 const handleSubmit=async (e)=>{
     e.preventDefault()
@@ -17,6 +18,7 @@ const handleSubmit=async (e)=>{
     const result= await login(email,password)
      if(result?.user?.email){
        toast.success('logged in')
+       navigate('/dashboard')
      }
 }
 
