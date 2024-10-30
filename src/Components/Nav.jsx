@@ -5,10 +5,13 @@ import { LiaLinkedin } from "react-icons/lia"
 import { Link, NavLink } from "react-router-dom"
 import logo from '../assets/NavLogo.webp'
 import { BiSearch, BiShoppingBag, BiUser } from "react-icons/bi"
+import useAuth from "../../Hooks/useAuth"
 
   
 
 const Nav = () => {
+
+     const {user}=useAuth()
 
      const navLink= <div className="flex items-center justify-start gap-4">
            <NavLink to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "bg-slate-700 text-white p-3 rounded-lg" : " "}> Home </NavLink>
@@ -68,7 +71,7 @@ const Nav = () => {
                      <button className="bg-slate-700 text-white p-[13px] "><BiSearch/></button>
                 </div>
                 <div className="flex justify-center items-center gap-6">
-                    <Link to='/login' className="px-4 btn hover:bg-slate-700 bg-gray-400">
+                    <Link to={user?'/dashboard':'/login'} className="px-4 btn hover:bg-slate-700 bg-gray-400">
                          <BiUser/>
                     </Link>
 
