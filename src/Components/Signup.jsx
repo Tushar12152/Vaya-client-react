@@ -3,11 +3,13 @@ import { imageUpload } from "../API'S/ImageUpload";
 import useAuth from '../../Hooks/useAuth';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const Signup = () => {
   const [imagePreview, setImagePreview] = useState(null);
+  const axiosSecure=useAxiosSecure()
   const navigate = useNavigate()
-  const { createUser, loading } = useAuth()
+  const { createUser,  } = useAuth()
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -24,12 +26,15 @@ const Signup = () => {
     const img = await imageUpload(image)
     const photo = img?.data?.display_url;
 
-    console.log('Signup Info:', { name, email, password, photo });
+    const user= { name, email, password, photo, role:'user' }
 
     const result = await createUser(email, password)
     if (result.user) {
       toast.success("Registration complete...")
       navigate('/login')
+      await axiosSecure.post('/users',user)
+
+      
     }
     
 
