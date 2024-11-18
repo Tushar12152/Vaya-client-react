@@ -2,11 +2,14 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { FaHome, FaSignOutAlt } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 
 const DashBoard = () => {
+    const axiosSecure=useAxiosSecure()
+const {logOut,user}= useAuth()
 
-const {logOut}= useAuth()
 const navigate=useNavigate()
 const handleSignOut=()=>{
     logOut()
@@ -14,19 +17,35 @@ const handleSignOut=()=>{
     toast.success('logged out')
 }
 
-    // const axiosSecure=useAxiosSecure()
+const { data: users = [] } = useQuery({
+    queryKey: ["user"],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/users`);
+      return res.data;
+    },
+  });
+
+ 
+  console.log(users)
 
 
-    //    const Admin=specificuser?.role==='admin'
+const specificuser= users.find(use=>use.email==user?.email)
+console.log(specificuser)
+
+   const Admin=specificuser?.role==='admin'
 
 
-    // console.log(Admin);
+    console.log(Admin);
 
     return (
         <div className="grid grid-cols-12 h-full ">
-
-
             <div className="col-span-4 md:col-span-3 min-h-screen text-center text-white bg-slate-600 ">
+
+    
+  
+  {
+    Admin? "admin Dashboard":"User Dashboard"
+  }
 
 
 

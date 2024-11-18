@@ -26,7 +26,7 @@ const Signup = () => {
     const img = await imageUpload(image)
     const photo = img?.data?.display_url;
 
-    const user= { name, email, password, photo, role:'user' }
+    const user= { email,name, photo, role:'user' }
 
     const result = await createUser(email, password)
     if (result.user) {
