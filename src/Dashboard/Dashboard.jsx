@@ -4,10 +4,11 @@ import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import AdminSide from "./AdminSide";
 
 
 const DashBoard = () => {
-    const axiosSecure=useAxiosSecure()
+const axiosSecure=useAxiosSecure()
 const {logOut,user}= useAuth()
 
 const navigate=useNavigate()
@@ -44,7 +45,7 @@ console.log(specificuser)
     
   
   {
-    Admin? "admin Dashboard":"User Dashboard"
+    Admin? <AdminSide/>:"User Dashboard"
   }
 
 

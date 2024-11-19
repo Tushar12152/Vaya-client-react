@@ -8,6 +8,11 @@ import Contact from "../Pages/Contact"
 import Login from "../Components/Login"
 import Signup from "../Components/Signup"
 import DashBoard from "../Dashboard/Dashboard"
+import AdminProfile from "../Dashboard/DashboardComponents/AdminProfile"
+import AddProduct from "../Dashboard/DashboardComponents/AddProduct"
+import AllProducts from "../Dashboard/DashboardComponents/AllProducts"
+import Requested from "../Dashboard/DashboardComponents/Requested"
+import Delivered from "../Dashboard/DashboardComponents/Delivered"
 
 const Router = createBrowserRouter([
     {
@@ -49,7 +54,29 @@ const Router = createBrowserRouter([
     },
     {
         path:'/dashboard',
-        element:<DashBoard/>
+        element:<DashBoard/>,
+        children:[
+            {
+                path:'/dashboard/admin',
+                element:<AdminProfile/>
+            },
+            {
+                path:'/dashboard/product',
+                element:<AddProduct/>
+            },
+            {
+                path:'/dashboard/all',
+                element:<AllProducts/>
+            },
+            {
+                path:'/dashboard/request',
+                element:<Requested/>
+            },
+            {
+                path:'/dashboard/delivered',
+                element:<Delivered/>
+            },
+        ]
     },
 ])
 
